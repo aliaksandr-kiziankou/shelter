@@ -1,0 +1,19 @@
+body.home {
+    background-image: url("../assets/start-screen-gradient-background.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation {
+    display: flex;
+}
