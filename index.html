@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shelter</title>
+  <title>Cozy House</title>
   <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/reset.css">
@@ -11,26 +11,119 @@
 <body class="home">
     <header>
         <div class="logo">
-            <h1>Cozy House</h1>
-            <p>Shelter for pets in Boston</p>
+            <a href="/" alt="Cozy House">
+                <div class="header__logo">
+                    <h1>Cozy House</h1>
+                </div>
+                <div class="header__subtitle">
+                    <p>Shelter for pets in Boston</p>
+                </div>
+            </a>    
         </div>
-        <nav>
+        <nav class="header__nav">
             <ul class="navigation">
-                <li>About the shelter</li>
-                <li>Our pets</li>
-                <li>Help the shelter</li>
-                <li>Contacts</li>
+                <li>
+                    <a href="#about" class="nav__link">About the shelter</a>
+                </li>
+                <li>
+                    <a href="#pets" class="nav__link">Our pets</a>
+                </li>
+                <li>
+                    <a href="#!" class="nav__link">Help the shelter</a>
+                </li>
+                <li>
+                    <a href="#contacts" class="nav__link">Contacts</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="start__screen">
+            <div class="start__screen-content">
+                <div class="start__screen-heading">
+                    <h2>Not only people need a house</h2>
+                </div>
+                <div class="start__screen-subtitle">
+                    <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                </div>
+                <button class="btn__primary">Make a friend</button>
+            </div>
+            <div class="start__screen-img">
+                <img src="assets/start-screen-puppy.png" class="puppy__img" alt="puppy">
+            </div>
+        </section>
+        <section class="section__about" id="about">
+            <div class="about__content">
+                <div class="about__img">
+                    <img src="assets/about-pets.png" alt="About Pets">
+                </div>
+                <div class="about__text">
+                    <div class="about__heading">
+                        <h2>About the shelter “Cozy House”</h2>
+                    </div>
+                    <div class="about__subheading-1">
+                        <p>Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+                    </div>
+                    <div class="about__subheading-2">
+                        <p>We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__pets" id="pets">
+            <div class="pets__content">
+                <div class="pets__heading">
+                    <h2>Our friends who <br> are looking for a house</h2>
+                </div>
+                <div class="pets__slider">
+                    <div class="pets__card">
+                        <div class="card__img">
+                            <img src="assets/pets-katrine.png" alt="katrine">
+                        </div>
+                        <div class="card__text">
+                            <p>Katrine</p>
+                        </div>
+                        <button class="card__btn">Learn more</button>
+                    </div>
+                    <div class="pets__card">
+                        <div class="card__img">
+                            <img src="assets/pets-jennifer.png" alt="jennifer">
+                        </div>
+                        <div class="card__text">
+                            <p>Jennifer</p>
+                        </div>
+                        <button class="card__btn">Learn more</button>
+                    </div>
+                    <div class="pets__card">
+                        <div class="card__img">
+                            <img src="assets/pets-woody.png" alt="woody">
+                        </div>
+                        <div class="card__text">
+                            <p>Woody</p>
+                        </div>
+                        <button class="card__btn">Learn more</button>
+                    </div>
+                </div>
+                <button class="pets__btn">
 
+                </button>
+            </div>
         </section>
     </main>
 
     <footer>
+        <div class="footer__content">
+            <div class="footer__contacts" id="Contacts">
+
+            </div>
+            <div class="footer__locations">
+
+            </div>
+            <div class="footer__img">
+
+            </div>
+        </div>
 
     </footer>
   
