@@ -96,6 +96,13 @@ header p {
 
 .nav__link:hover {
     border-bottom: 3px solid #F1CDB3;
+    color:#FAFAFA;
+}
+
+.active {
+    pointer-events: none;
+    border-bottom: 3px solid #F1CDB3;
+    color:#FAFAFA;
 }
 
 /* Start Screen styles */
@@ -331,7 +338,7 @@ header p {
     justify-content: center;
     align-items: center;
     background-color: #FAFAFA;
-    border-radius: 9px 9px 0 0;
+    border-radius: 9px;
 }
 
 .card__text {
@@ -351,8 +358,6 @@ header p {
 }
 
 .card__btn {
-    width: 187;
-    height: 52;
     opacity: 1;
     gap: 10px;
     border-radius: 100px;
@@ -369,7 +374,6 @@ header p {
     line-height: 130%;
     letter-spacing: 6%;
     background-color: #FAFAFA;
-
 }
 
 .pets__btn {
@@ -501,7 +505,7 @@ header p {
     color: #545454;
 }
 
-.donation__text h5 {
+.donation__text h4 {
     font-family: Georgia;
     font-weight: 400;
     font-size: 15px;
@@ -511,7 +515,7 @@ header p {
     color: #545454;
 }
 
-.donation__text h4 {
+.donation__text h5{
     font-family: Georgia;
     font-weight: 400;
     font-size: 20px;
@@ -530,6 +534,10 @@ header p {
     letter-spacing: 0px;
     vertical-align: middle;
     color: #B2B2B2;
+}
+
+.donation__text a {
+    text-decoration: none;
 }
 
 .credit__card {
@@ -558,6 +566,10 @@ footer {
     margin: 0 auto;
     max-width: 1280px;
     padding-top: 40px;
+}
+
+footer a {
+    text-decoration: none;
 }
 
 .footer__content {
