@@ -131,7 +131,6 @@ header p {
     height: 728px;
     overflow: hidden;
     position: relative;
-    flex-shrink: 0;
 }
 
 .puppy__img {
@@ -509,12 +508,13 @@ header p {
 }
 
 .donation__content {
+    max-width: 915px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 915px;
     margin: 0 auto;
-    min-width: 915px;
+    gap: 30px;
 }
 
 .donation__img {
