@@ -9,16 +9,12 @@
   <link rel="stylesheet" href="./css/reset.css">
 </head>
 <body class="home">
-    <header>
+    <header class="wrapper">
         <div class="header__container">
             <div class="logo">
             <a href="#">
-                <div class="header__logo">
                     <h1>Cozy House</h1>
-                </div>
-                <div class="header__subtitle">
                     <p>Shelter for pets in Boston</p>
-                </div>
             </a>    
         </div>
         <nav class="header__nav">
@@ -42,17 +38,16 @@
 
     <main>
         <section class="start__screen">
-            <div class="start__screen-content">
-                <div class="start__screen-heading">
-                    <h2>Not only people need a house</h2>
+            <div class="start__screen-section">
+                <div class="start__screen-content">
+                    <div class="start__screen-heading">
+                        <h2>Not only people need a house</h2>
+                    </div>
+                    <div class="start__screen-subtitle">
+                        <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                    </div>
+                    <button class="btn__primary" onclick="location.href='#pets'">Make a friend</button>
                 </div>
-                <div class="start__screen-subtitle">
-                    <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                </div>
-                <button class="btn__primary" onclick="location.href='#pets'">Make a friend</button>
-            </div>
-            <div class="start__screen-img">
-                <img src="assets/start-screen-puppy.png" class="puppy__img" alt="puppy">
             </div>
         </section>
         <section class="section__about" id="about">
@@ -79,11 +74,11 @@
                     <h2>Our friends who <br> are looking for a house</h2>
                 </div>
                 <div class="pets__slider">
-                    <div class="arrow">
+                    <button class="arrow">
                         <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
                         </svg>
-                    </div>
+                    </button>
                     <div class="slider__row">
                         <div class="pets__card">
                             <div class="card__img">
@@ -113,11 +108,11 @@
                             <button class="card__btn">Learn more</button>
                         </div>
                     </div>
-                    <div class="arrow">
+                    <button class="arrow">
                         <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929"/>
                         </svg>
-                    </div>
+                    </button>
                 </div>
                 <button class="pets__btn" onclick="location.href='pets.html'">Get to know the rest</button>
             </div>
