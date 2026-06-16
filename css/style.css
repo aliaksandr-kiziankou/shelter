@@ -2,11 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
-
+/*
 * {
     outline: 1px solid red;
 }
-
+*/
 
 body.home {
     background-image: url("../assets/start-screen-gradient-background.png");
@@ -225,14 +225,14 @@ header p {
     max-width: 1200px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 175px;
 }
 
 .about__img {
     max-width: 300px;
     flex-shrink: 0;
+    margin-right: 120px;
 }
 
 .about__img img {
@@ -328,8 +328,8 @@ header p {
     max-width: 1200px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: space-between;
 }
 
 .arrow {
@@ -342,6 +342,7 @@ header p {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .arrow:hover {
@@ -351,10 +352,11 @@ header p {
 }
 
 .slider__row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 90px;
-    margin: 0 53px;
+    max-width: 990px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .pets__card {
@@ -406,12 +408,14 @@ header p {
 .pets__card:hover .card__btn {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .pets__card:hover {
     cursor: pointer;
     background-color: #FFFFFF;
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    transition: all 0.3s ease;
 }
 
 .pets__btn {
@@ -435,17 +439,29 @@ header p {
 
 .pets__btn:hover {
     background-color: #FDDCC4;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+    .pets__card:last-child {
+        display: none;
+    }
+
+    .slider__row {
+        justify-content: space-around;
+    }
 }
 
 /* Help Section styles */
 
 .section__help {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 0 40px;
+    padding: 80px 40px 100px 40px;
 }
 
 .help__content {
@@ -453,7 +469,6 @@ header p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 80px 0 100px 0;
 }
 
 .help__heading {
@@ -467,7 +482,7 @@ header p {
     justify-content: center;
     flex-wrap: wrap;
     max-width: 1029px;
-    max-height: 281px;
+    width: 100%;
 }
 
 .help__icon {
@@ -503,21 +518,22 @@ header p {
 /* Donation Section styles */
 
 .section__donation {
+    max-width: 1280px;
+    width: 100%;
     display: flex;
     justify-items: center;
     align-items: center;
-    padding: 80px 0 100px 0;
+    padding: 80px 40px 100px 40px;
     background-color: #F6F6F6;
-    max-width: 1280px;
     margin: 0 auto;
 }
 
 .donation__content {
     max-width: 915px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 915px;
     margin: 0 auto;
     gap: 30px;
 }
@@ -525,10 +541,12 @@ header p {
 .donation__img {
     width: 505px;
     height: 261px;
+    flex-shrink: 0.3;
 }
 
 .donation__text {
     max-width: 380px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -581,6 +599,7 @@ header p {
 
 .credit__card {
     max-width: 349px;
+    width:100%;
     height: 43px;
     border-radius: 9px;
     background-color: #F1CDB3;
@@ -601,10 +620,12 @@ header p {
 footer {
     background-image: url("../assets/footer-gradient-background.png");
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
+    background-size: cover; 
     margin: 0 auto;
     max-width: 1280px;
-    padding-top: 40px;
+    width: 100%;
+    padding: 40px 40px 0 40px;
 }
 
 footer a {
@@ -613,17 +634,17 @@ footer a {
 
 .footer__content {
     max-width: 1200px;
-    height: 310px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 160px;
+    justify-content: space-between;
     margin: 0 auto;
+    gap: 10px;
 }
 
 .footer__content h3 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: 35px;
+    font-size: clamp(20px, 2.6vw, 35px);
     line-height: 130%;
     letter-spacing: 6%;
     color: #FFFFFF;
@@ -632,8 +653,8 @@ footer a {
 .footer__content h4 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 114.99999999999999%;
+    font-size: clamp(14px, 1.6vw, 20px);
+    line-height: 115%;
     letter-spacing: 6%;
     color: #F1CDB3;
 }
@@ -653,7 +674,8 @@ footer a {
 }
 
 .contacts__title {
-    width: 279px;
+    max-width: 279px;
+    width: 100%;
 }
 
 .contact {
@@ -664,7 +686,8 @@ footer a {
 }
 
 .locations__title {
-    width: 270px;
+    max-width: 270px;
+    width: 100%;
     margin-bottom: 34px;
 }
 
@@ -675,4 +698,5 @@ footer a {
 .footer__img {
     width: 300px;
     height: 310px;
+    flex-shrink: 0;
 }
