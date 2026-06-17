@@ -10,14 +10,20 @@ html {
 
 /* Header styles */
 
+.wrapper {
+    max-width: 1280px;
+    padding: 30px 40px;
+    margin: 0 auto;
+}
+
 .header__container {
+    max-width: 1200px;
+    width: 100%;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    height: 120px;
     margin: 0 auto;
 }
 
@@ -26,20 +32,13 @@ header a {
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
     width: 186px;
     height: 60px;
-}
-
-.header__logo {
     display: flex;
-    width: 100%;
-    height: 35px;
-    opacity: 1;
+    flex-direction: column;
 }
 
-h1 {
+.logo h1 {
     font-family: Georgia;
     font-weight: 400;
     font-size: 32px;
@@ -47,16 +46,7 @@ h1 {
     letter-spacing: 6%;
     vertical-align: middle;
     color: #545454;
-}
-
-.header__subtitle {
-    width: 180px;
-    height: 15px;
-    display: flex;
-    top: 45px;
-    left: 4px;
-    opacity: 1;
-    margin: 10px 1px 0 4px;
+    margin-bottom: 10px;
 }
 
 header p {
@@ -67,6 +57,10 @@ header p {
     letter-spacing: 10%;
     vertical-align: middle;
     color: #292929;
+}
+
+.logo p {
+    margin-left: 4px;
 }
 
 .header__nav {
@@ -90,13 +84,13 @@ header p {
 }
 
 .nav__link:hover {
-    color: #292929;
+    color:#292929;
 }
 
 .active {
     pointer-events: none;
     border-bottom: 3px solid #F1CDB3;
-    color: #292929;
+    color:#292929;
 }
 
 /* Pets Main Section styles */
@@ -107,8 +101,7 @@ header p {
     justify-content: center;
     max-width: 1280px;
     margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 102px;
+    padding: 80px 40px 102px 40px;
     background-color: #F6F6F6;
 }
 
@@ -140,6 +133,8 @@ header p {
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 30px 40px;
     padding: 15px 0;
     margin-bottom: 45px;
@@ -207,13 +202,13 @@ header p {
 .pets__navigation-btn:hover {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .pets__navigation-btn.inactive:hover {
     background-color: #919191;
     box-shadow: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .inactive {
@@ -234,12 +229,14 @@ header p {
 .pets__card:hover .card__btn {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .pets__card:hover {
     cursor: pointer;
     background-color: #FFFFFF;
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    transition: all 0.3s ease;
 }
 
 .pets__navigation {
@@ -258,10 +255,12 @@ header p {
 footer {
     background-image: url("../assets/footer-gradient-background.png");
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
+    background-size: cover; 
     margin: 0 auto;
     max-width: 1280px;
-    padding-top: 40px;
+    width: 100%;
+    padding: 40px 40px 0 40px;
 }
 
 footer a {
@@ -270,17 +269,17 @@ footer a {
 
 .footer__content {
     max-width: 1200px;
-    height: 310px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 160px;
+    justify-content: space-between;
     margin: 0 auto;
+    gap: 10px;
 }
 
 .footer__content h2 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: 35px;
+    font-size: clamp(20px, 2.6vw, 35px);
     line-height: 130%;
     letter-spacing: 6%;
     color: #FFFFFF;
@@ -289,8 +288,8 @@ footer a {
 .footer__content h3 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 114.99999999999999%;
+    font-size: clamp(14px, 1.6vw, 20px);
+    line-height: 115%;
     letter-spacing: 6%;
     color: #F1CDB3;
 }
@@ -310,7 +309,8 @@ footer a {
 }
 
 .contacts__title {
-    width: 279px;
+    max-width: 279px;
+    width: 100%;
 }
 
 .contact {
@@ -321,7 +321,8 @@ footer a {
 }
 
 .locations__title {
-    width: 270px;
+    max-width: 270px;
+    width: 100%;
     margin-bottom: 34px;
 }
 
@@ -332,4 +333,5 @@ footer a {
 .footer__img {
     width: 300px;
     height: 310px;
+    flex-shrink: 0;
 }
