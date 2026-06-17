@@ -708,12 +708,13 @@ footer a {
     justify-content: space-between;
     margin: 0 auto;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .footer__content h3 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: clamp(20px, 2.6vw, 35px);
+    font-size: 35px;
     line-height: 130%;
     letter-spacing: 6%;
     color: #FFFFFF;
@@ -722,7 +723,7 @@ footer a {
 .footer__content h4 {
     font-family: Georgia;
     font-weight: 400;
-    font-size: clamp(14px, 1.6vw, 20px);
+    font-size: 20px;
     line-height: 115%;
     letter-spacing: 6%;
     color: #F1CDB3;
@@ -768,4 +769,28 @@ footer a {
     width: 300px;
     height: 310px;
     flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+
+    footer {
+        background-image: url("../assets/footer-gradient-background-768.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 30px;
+    }
+
+    .footer__content {
+        justify-content: center;
+        gap: 60px 65px;
+    }
+
+    .footer__contacts {
+        margin-top: 0;
+    }
+
+    .footer__locations {
+        margin-top: 0;
+    }
 }
