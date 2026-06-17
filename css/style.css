@@ -8,7 +8,7 @@ html {
 }
 */
 
-body.home {
+.wrapper-background {
     background-image: url("../assets/start-screen-gradient-background.png");
     background-repeat: no-repeat;
     background-position: top center;
@@ -108,6 +108,18 @@ header p {
     color:#FAFAFA;
 }
 
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 30px 30px 0 30px;
+    }
+
+    .wrapper-background {
+    background-image: url("../assets/start-screen-gradient-background-768.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    }
+}
+
 /* Start Screen styles */
 
 .start__screen {
@@ -115,6 +127,10 @@ header p {
     width: 100%;
     margin: 0 auto;
     padding: 90px 40px 0 40px;
+    background-image: url("../assets/start-screen-puppy.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position-x: 542px;
 }
 
 .start__screen-section {
@@ -128,33 +144,16 @@ header p {
 .start__screen-content {
     max-width: 460px;
     width: 100%;
-}
-
-.start__screen-img {
-    max-width: 698px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.puppy__img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.start__screen {
-    background-image: url("../assets/start-screen-puppy.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-position-x: 542px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
 }
 
 .start__screen-heading {
     max-width: 310px;
     width: 100%;
     height: 114px;
-    margin: 0 150px 42px 0;
+    
 }
 
 .start__screen-heading h2 {
@@ -171,7 +170,7 @@ header p {
     max-width: 460px;
     width: 100%;
     height: 72px;
-    margin-bottom: 42px;
+    
 }
 
 .start__screen-subtitle p {
@@ -185,6 +184,8 @@ header p {
 }
 
 .btn__primary {
+    width: 208px;
+    height: 52px;
     color: #292929;
     background-color: #F1CDB3;
     top: 270px;
@@ -209,6 +210,34 @@ header p {
     transition: all 0.2s ease;
 }
 
+@media (max-width: 768px) {
+
+    .start__screen {
+        max-width: 768px;
+        min-height: 1075px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 60px;
+        background-position-x: 85%;
+        background-size: 569px auto;
+    }
+
+    .start__screen-section {
+        max-width: 569px;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .start__screen-content {
+        margin: 0 auto;
+    }
+
+    .btn__primary {
+        transform: translateX(60%);
+    }
+}
+
 /* About Section styles */
 
 .section__about {
@@ -227,12 +256,12 @@ header p {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 120px;
 }
 
 .about__img {
     max-width: 300px;
     flex-shrink: 0;
-    margin-right: 120px;
 }
 
 .about__img img {
@@ -249,7 +278,6 @@ header p {
     max-width: 370px;
     width: 100%;
     margin: 0 60px 25px 0;
-    
 }
 
 .about__heading h2 {
@@ -280,6 +308,18 @@ header p {
     line-height: 160%;
     letter-spacing: 0px;
     color: #4C4C4C;
+}
+
+@media (max-width: 768px) {
+
+    .about__content {
+        flex-direction: column-reverse;
+        gap: 80px;
+    }
+
+    .about__img {
+        margin: 0 auto;
+    }
 }
 
 /* Pets Section styles */
@@ -443,12 +483,20 @@ header p {
 }
 
 @media (max-width: 1000px) {
+
     .pets__card:last-child {
         display: none;
     }
 
     .slider__row {
         justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .section__pets {
+        padding: 80px 30px 100px 30px;
     }
 }
 
@@ -513,6 +561,18 @@ header p {
     text-align: center;
     vertical-align: middle;
     color: #545454;
+}
+
+@media (max-width: 768px) {
+
+    .help__list {
+        gap: 55px 60px;
+    }
+
+    .help__icon {
+        width: 170px;
+        height: 113px;
+    }
 }
 
 /* Donation Section styles */
@@ -613,6 +673,14 @@ header p {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+}
+
+@media (max-width: 768px) {
+
+    .donation__content {
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
 }
 
 /* Footer styles */
