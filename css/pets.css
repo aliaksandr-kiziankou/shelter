@@ -81,6 +81,7 @@ header p {
     letter-spacing: 0px;
     color: #545454;
     padding-bottom: 4px;
+    transition: all 0.3s ease;
 }
 
 .nav__link:hover {
@@ -149,6 +150,7 @@ header p {
     align-items: center;
     background-color: #FAFAFA;
     border-radius: 9px;
+    transition: all 0.5s ease;
 }
 
 .card__text {
@@ -185,6 +187,7 @@ header p {
     line-height: 130%;
     letter-spacing: 6%;
     background-color: #FAFAFA;
+    transition: all 0.5s ease;
 }
 
 .pets__navigation-btn {
@@ -197,18 +200,17 @@ header p {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 .pets__navigation-btn:hover {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.3s ease;
 }
 
 .pets__navigation-btn.inactive:hover {
     background-color: #919191;
     box-shadow: none;
-    transition: all 0.3s ease;
 }
 
 .inactive {
@@ -229,7 +231,6 @@ header p {
 .pets__card:hover .card__btn {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.3s ease;
 }
 
 .pets__card:hover {

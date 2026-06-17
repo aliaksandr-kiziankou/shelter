@@ -96,6 +96,7 @@ header p {
     letter-spacing: 0px;
     color: #CDCDCD;
     padding-bottom: 4px;
+    transition: all 0.3s ease;
 }
 
 .nav__link:hover {
@@ -203,11 +204,11 @@ header p {
     letter-spacing: 6%;
     cursor: pointer;
     border: none;
+    transition: all 0.3s ease;
 }
 
 .btn__primary:hover {
     background-color: #FDDCC4;
-    transition: all 0.2s ease;
 }
 
 @media (max-width: 768px) {
@@ -383,12 +384,12 @@ header p {
     align-items: center;
     cursor: pointer;
     flex-shrink: 0;
+    transition: all 0.5s ease;
 }
 
 .arrow:hover {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.2s ease;
 }
 
 .slider__row {
@@ -408,6 +409,7 @@ header p {
     align-items: center;
     background-color: #FAFAFA;
     border-radius: 9px;
+    transition: all 0.5s ease;
 }
 
 .card__text {
@@ -443,19 +445,18 @@ header p {
     line-height: 130%;
     letter-spacing: 6%;
     background-color: #FAFAFA;
+    transition: all 0.5s ease;
 }
 
 .pets__card:hover .card__btn {
     background-color: #FDDCC4;
     box-shadow: none;
-    transition: all 0.3s ease;
 }
 
 .pets__card:hover {
     cursor: pointer;
     background-color: #FFFFFF;
     box-shadow: 0px 2px 35px 14px #0D0D0D0A;
-    transition: all 0.3s ease;
 }
 
 .pets__btn {
@@ -475,11 +476,11 @@ header p {
     cursor: pointer;
     color: #292929;
     margin: 60px 0 0 0;
+    transition: all 0.5s ease;
 }
 
 .pets__btn:hover {
     background-color: #FDDCC4;
-    transition: all 0.3s ease;
 }
 
 @media (max-width: 1000px) {
