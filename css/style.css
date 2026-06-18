@@ -173,7 +173,7 @@ header p {
     */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .wrapper {
         padding: 30px 20px 0 20px;
@@ -301,7 +301,6 @@ header p {
     .start__screen-section {
         max-width: 569px;
         width: 100%;
-        min-height: ;
         padding: 0;
         margin: 0 auto;
     }
@@ -893,10 +892,6 @@ header p {
     .donation__content {
         flex-direction: column-reverse;
         gap: 60px;
-    }
-
-    .donation__img {
-        
     }
 
 }
