@@ -147,6 +147,7 @@ header p {
     z-index: 100;
     display: flex;
     align-items: center;
+    padding-top: 10px;
     background-color: #292929;
 
     transform: translateX(100%);
@@ -177,6 +178,7 @@ header p {
     line-height: 160%;
     letter-spacing: 0px;
     color: #CDCDCD;
+    padding-bottom: 10px;
 }
 
 .burger-link:hover {
