@@ -26,3 +26,55 @@ window.addEventListener('resize', () => {
 });
 
 
+/*Carousel Slider*/
+
+let ALL_CARDS = [];
+let threeCards = [];
+let remainingCards = [];
+
+async function init() {
+    const RESPONSE = await fetch('script/pets.json');
+    ALL_CARDS = await RESPONSE.json();
+    threeCards = shuffleCards([...ALL_CARDS]).slice(0, 3);
+    remainingCards = ALL_CARDS.filter(card => !threeCards.includes(card));
+    renderCards(threeCards);
+}
+
+init();
+
+const SLIDER = document.querySelector('.slider__row');
+
+function renderCards(ALL_CARDS) {
+    SLIDER.innerHTML = ALL_CARDS.map(card => `
+        <div class="pets__card">
+            <div class="card__img">
+                <img src="${card.img}" alt="${card.name}">
+            </div>
+            <div class="card__text">
+                <p>${card.name}</p>
+            </div>
+            <button class="card__btn">Learn more</button>
+        </div>
+    `).join('');
+}
+
+function shuffleCards(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+const BTN_PREV = document.querySelector('.arrow.prev');
+const BTN_NEXT = document.querySelector('.arrow.next');
+
+BTN_PREV.addEventListener('click', switchCards);
+BTN_NEXT.addEventListener('click', switchCards);
+
+function switchCards() {
+    const newThreeCards = remainingCards.slice(0, 3);
+    remainingCards = shuffleCards([...remainingCards.slice(3), ...threeCards]);
+    threeCards = newThreeCards;
+    renderCards(threeCards);
+}
