@@ -28,6 +28,7 @@ window.addEventListener('resize', () => {
 
 /*Carousel Slider*/
 
+
 let ALL_CARDS = [];
 let threeCards = [];
 let remainingCards = [];
@@ -107,7 +108,9 @@ SLIDER.addEventListener('transitionend', (event) => {
     BTN_PREV_MOBILE.addEventListener('click', transitionLeft);
 });
 
+
 /*Popup*/
+
 
 const POPUP = document.querySelector('.pop-up');
 const MODAL_WINDOW = document.querySelector('.pop-up__content');

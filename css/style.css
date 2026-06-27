@@ -151,7 +151,6 @@ header p {
     cursor: pointer;
     padding: 0;
     z-index: 1000;
-    transition: all 1s ease;
 }
 
 .burger-btn span {
@@ -164,10 +163,12 @@ header p {
 
 .rotate span:nth-child(2) {
     transform: rotate(90deg);
+    transition-delay: 0.1s;
 }
 
 .rotate span:nth-child(3) {
     transform: translateX(10px) translateY(-10px) rotate(90deg);
+    transition-delay: 0.2s;
 }
 
 
