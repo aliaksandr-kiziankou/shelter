@@ -29,6 +29,11 @@ window.addEventListener('resize', () => {
 /*Carousel Slider*/
 
 
+const SLIDER = document.querySelector('.slider__row');
+const BTN_PREV = document.querySelector('.arrow.prev');
+const BTN_NEXT = document.querySelector('.arrow.next');
+const BTN_PREV_MOBILE = document.querySelector('.arrow.prev.mobile');
+
 let ALL_CARDS = [];
 let threeCards = [];
 let remainingCards = [];
@@ -42,8 +47,6 @@ async function sliderCards() {
 }
 
 sliderCards();
-
-const SLIDER = document.querySelector('.slider__row');
 
 function renderCards(ALL_CARDS) {
     SLIDER.innerHTML = ALL_CARDS.map(card => `
@@ -67,10 +70,6 @@ function shuffleCards(arr) {
     return arr;
 }
 
-const BTN_PREV = document.querySelector('.arrow.prev');
-const BTN_NEXT = document.querySelector('.arrow.next');
-const BTN_PREV_MOBILE = document.querySelector('.arrow.prev.mobile');
-
 function switchCards() {
     const newThreeCards = remainingCards.slice(0, 3);
     remainingCards = shuffleCards([...remainingCards.slice(3), ...threeCards]);
@@ -83,13 +82,13 @@ BTN_NEXT.addEventListener('click', transitionRight);
 BTN_PREV_MOBILE.addEventListener('click', transitionLeft);
 
 function transitionLeft() {
-    SLIDER.classList.add('slide-left');
+    SLIDER.classList.add('slide-right');
     BTN_PREV.removeEventListener('click', transitionLeft);
     BTN_PREV_MOBILE.removeEventListener('click', transitionLeft);
 }
 
 function transitionRight() {
-    SLIDER.classList.add('slide-right');
+    SLIDER.classList.add('slide-left');
     BTN_NEXT.removeEventListener('click', transitionRight);
 }
 

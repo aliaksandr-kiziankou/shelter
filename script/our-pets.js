@@ -26,36 +26,173 @@ window.addEventListener('resize', () => {
 });
 
 
-/*Pets cards render*/
+/*Pets cards and pagination*/
 
+
+const PETS_CARDS = document.querySelector('.pets__cards-container');
+const START_BTN = document.querySelector('.start');
+const PREV_BTN = document.querySelector('.prev-page');
+const NEXT_BTN = document.querySelector('.next-page');
+const END_BTN = document.querySelector('.end');
+const PAGE_COUNTER = document.querySelector('.current-page h3');
 
 let cardsJson = [];
 let multiCards = [];
+let currentPage = 1;
+let maxPage;
 
 async function fetchCards() {
     const response = await fetch('script/pets.json');
     cardsJson = await response.json();
-    multiCards = [...cardsJson, ...cardsJson, ...cardsJson, ...cardsJson, ...cardsJson, ...cardsJson];
-    renderPetsCards(multiCards);
+    const shuffledJson = [...cardsJson.slice(cardsJson.length/2, cardsJson.length), ...cardsJson.slice(0, cardsJson.length/2)];
+    multiCards = [...shuffledJson, ...cardsJson, ...shuffledJson, ...cardsJson, ...shuffledJson, ...cardsJson];
+    renderPage(currentPage);
+    updateButtonsStatus();
 }
 
 fetchCards();
 
-const PETS_CARDS = document.querySelector('.pets__cards-container');
+function getCardsPerPage() {
+    if (window.innerWidth < 768) return 3;
+    if (window.innerWidth < 1024) return 6;
+  return 8;
+}
 
-function renderPetsCards() {
-    PETS_CARDS.innerHTML = multiCards.map(card => `
-        <div class="pets__card" data-name="${card.name}">
-            <div class="card__img">
-                <img src="${card.img}" alt="${card.name}">
+function renderPage(page) {
+    const startCardIndex = (currentPage - 1) * getCardsPerPage();
+    const currentPageCards = multiCards.slice(startCardIndex, startCardIndex + getCardsPerPage());
+
+    PETS_CARDS.innerHTML = currentPageCards.map(card => `
+        <div class="pets__page">
+            <div class="pets__card" data-name="${card.name}">
+                <div class="card__img">
+                    <img src="${card.img}" alt="${card.name}">
+                </div>
+                <div class="card__text">
+                    <p>${card.name}</p>
+                </div>
+                <button class="card__btn">Learn more</button>
             </div>
-            <div class="card__text">
-                <p>${card.name}</p>
-            </div>
-            <button class="card__btn">Learn more</button>
         </div>
     `).join('');
 }
+
+function pageCounter() {
+    PAGE_COUNTER.textContent = currentPage;
+}
+
+function getMaxPage() {
+    return Math.ceil(multiCards.length / getCardsPerPage());
+}
+
+function updateButtonsStatus() {
+    PREV_BTN.classList.toggle('inactive', currentPage === 1);
+    START_BTN.classList.toggle('inactive', currentPage === 1);
+
+    NEXT_BTN.classList.toggle('inactive', currentPage === getMaxPage());
+    END_BTN.classList.toggle('inactive', currentPage === getMaxPage());
+}
+
+function changePage(newPage) {
+    PETS_CARDS.classList.add('fade-out');
+    
+    const handler = (event) => {
+        if (event.propertyName !== 'opacity') return;
+
+        currentPage = newPage;
+        
+        renderPage();
+        pageCounter();
+        updateButtonsStatus();
+
+        PETS_CARDS.classList.remove('fade-out');
+    }
+
+    PETS_CARDS.addEventListener('transitionend', handler, {once: true});
+}
+
+START_BTN.addEventListener('click', () => {
+    if (currentPage === 1) return;
+
+    changePage(1);
+});
+
+PREV_BTN.addEventListener('click', () => {
+    if (currentPage === 1) return;
+
+    changePage(currentPage - 1);
+});
+
+NEXT_BTN.addEventListener('click', () => {
+    if (currentPage === getMaxPage()) return;
+
+    changePage(currentPage + 1);
+});
+
+END_BTN.addEventListener('click', () => {
+    if (currentPage === getMaxPage()) return;
+
+    changePage(getMaxPage());
+});
+
+
+/*
+PETS_CARDS.addEventListener('transitionend', (event) => {
+    if (event.target !== PETS_CARDS) return;
+    if (event.propertyName !== 'transform') return;
+
+    PETS_CARDS.style.transition = 'none';
+    PETS_CARDS.classList.remove('slide-left', 'slide-right');
+    renderPage(currentPage);
+    pageCounter();
+    updateButtonsStatus();
+    PETS_CARDS.getBoundingClientRect();
+    PETS_CARDS.style.transition = '';
+});
+*/
+
+
+
+
+/*function renderPage(page) {
+    const perPage = getCardsPerPage();
+    const totalPages = Math.ceil(multiCards.length/perPage);
+
+    PETS_CARDS.innerHTML = Array.from({ length: totalPages }, (_, i) => {
+        const cardsForPage = multiCards.slice(i * perPage, (i + 1) * perPage);
+        return `<div class="cards-page">
+            ${cardsForPage.map(card => `
+                <div class="pets__card" data-name="${card.name}">
+                    <div class="card__img">
+                        <img src="${card.img}" alt="${card.name}">
+                    </div>
+                    <div class="card__text">
+                        <p>${card.name}</p>
+                    </div>
+                    <button class="card__btn">Learn more</button>
+                </div>
+            `).join('')}
+        </div>` 
+    }).join('');
+}
+*/
+
+
+/*
+PETS_CARDS.innerHTML = sliceForPage.map(card => `
+        <div class="pets__page">
+            <div class="pets__card" data-name="${card.name}">
+                <div class="card__img">
+                    <img src="${card.img}" alt="${card.name}">
+                </div>
+                <div class="card__text">
+                    <p>${card.name}</p>
+                </div>
+                <button class="card__btn">Learn more</button>
+            </div>
+        </div>
+    `).join('');
+*/
 
 
 /*Popup*/
