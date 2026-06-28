@@ -396,6 +396,7 @@ header p {
     inset: 0;
     background-color: #29292999;
     padding: 0 69px;
+    z-index: 10;
 }
 
 .pop-up__window {
@@ -545,7 +546,8 @@ header p {
 
     .pop-up__window {
         max-width: 900px;
-        max-height: 350px;
+        max-height: 380px;
+        height: 100%;
     }
 
     .pop-up__text h4 {
@@ -629,11 +631,6 @@ header p {
 /* Footer styles */
 
 footer {
-    /*background-image: url("../assets/footer-gradient-background.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    max-width: 1280px;*/
     margin: 0 auto;
     width: 100%;
     padding: 40px 40px 0 40px;
@@ -737,12 +734,6 @@ footer a {
 
 
     footer {
-        /*
-        background-image: url("../assets/footer-gradient-background-768.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        */
         padding-top: 30px;
     }
     

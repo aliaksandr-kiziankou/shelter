@@ -58,7 +58,25 @@ function getCardsPerPage() {
   return 8;
 }
 
-function renderPage(page) {
+let lastCardsPerPage = getCardsPerPage();
+
+window.addEventListener('resize', () => {
+    const currentCardsPerPage = getCardsPerPage();
+
+    if (lastCardsPerPage === currentCardsPerPage) return;
+
+    lastCardsPerPage = currentCardsPerPage;
+
+    if (currentPage > getMaxPage()) {
+        currentPage = getMaxPage();
+    }
+    
+    renderPage();
+    pageCounter();
+    updateButtonsStatus();
+});
+
+function renderPage() {
     const startCardIndex = (currentPage - 1) * getCardsPerPage();
     const currentPageCards = multiCards.slice(startCardIndex, startCardIndex + getCardsPerPage());
 
@@ -134,65 +152,6 @@ END_BTN.addEventListener('click', () => {
 
     changePage(getMaxPage());
 });
-
-
-/*
-PETS_CARDS.addEventListener('transitionend', (event) => {
-    if (event.target !== PETS_CARDS) return;
-    if (event.propertyName !== 'transform') return;
-
-    PETS_CARDS.style.transition = 'none';
-    PETS_CARDS.classList.remove('slide-left', 'slide-right');
-    renderPage(currentPage);
-    pageCounter();
-    updateButtonsStatus();
-    PETS_CARDS.getBoundingClientRect();
-    PETS_CARDS.style.transition = '';
-});
-*/
-
-
-
-
-/*function renderPage(page) {
-    const perPage = getCardsPerPage();
-    const totalPages = Math.ceil(multiCards.length/perPage);
-
-    PETS_CARDS.innerHTML = Array.from({ length: totalPages }, (_, i) => {
-        const cardsForPage = multiCards.slice(i * perPage, (i + 1) * perPage);
-        return `<div class="cards-page">
-            ${cardsForPage.map(card => `
-                <div class="pets__card" data-name="${card.name}">
-                    <div class="card__img">
-                        <img src="${card.img}" alt="${card.name}">
-                    </div>
-                    <div class="card__text">
-                        <p>${card.name}</p>
-                    </div>
-                    <button class="card__btn">Learn more</button>
-                </div>
-            `).join('')}
-        </div>` 
-    }).join('');
-}
-*/
-
-
-/*
-PETS_CARDS.innerHTML = sliceForPage.map(card => `
-        <div class="pets__page">
-            <div class="pets__card" data-name="${card.name}">
-                <div class="card__img">
-                    <img src="${card.img}" alt="${card.name}">
-                </div>
-                <div class="card__text">
-                    <p>${card.name}</p>
-                </div>
-                <button class="card__btn">Learn more</button>
-            </div>
-        </div>
-    `).join('');
-*/
 
 
 /*Popup*/
