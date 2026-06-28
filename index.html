@@ -13,32 +13,50 @@
         <header class="wrapper">
             <div class="header__container">
                 <div class="logo">
-                <a href="#">
+                    <a href="#">
                         <h1>Cozy House</h1>
                         <p>Shelter for pets in Boston</p>
-                </a>    
-            </div>
-            <nav class="header__nav">
-                <ul class="navigation">
-                    <li>
-                        <a href="index.html" class="nav__link active">About the shelter</a>
-                    </li>
-                    <li>
-                        <a href="pets.html" class="nav__link">Our pets</a>
-                    </li>
-                    <li>
-                        <a href="#help" class="nav__link">Help the shelter</a>
-                    </li>
-                    <li>
-                        <a href="#contacts" class="nav__link">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
-            <button class="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                    </a>    
+                </div>
+                <nav class="header__nav">
+                    <ul class="navigation">
+                        <li>
+                            <a href="index.html" class="nav__link active">About the shelter</a>
+                        </li>
+                        <li>
+                            <a href="pets.html" class="nav__link">Our pets</a>
+                        </li>
+                        <li>
+                            <a href="#help" class="nav__link">Help the shelter</a>
+                        </li>
+                        <li>
+                            <a href="#contacts" class="nav__link">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="burger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="burger-menu">
+                    <nav class="burger-menu-nav">
+                        <ul class="burger-nav">
+                            <li>
+                                <a href="index.html" class="burger-link active">About the shelter</a>
+                            </li>
+                            <li>
+                                <a href="pets.html" class="burger-link">Our pets</a>
+                            </li>
+                            <li>
+                                <a href="#help" class="burger-link">Help the shelter</a>
+                            </li>
+                            <li>
+                                <a href="#contacts" class="burger-link">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -85,35 +103,7 @@
                                 <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
                             </svg>
                         </button>
-                        <div class="slider__row">
-                            <div class="pets__card">
-                                <div class="card__img">
-                                    <img src="assets/pets-katrine.png" alt="katrine">
-                                </div>
-                                <div class="card__text">
-                                    <p>Katrine</p>
-                                </div>
-                                <button class="card__btn">Learn more</button>
-                            </div>
-                            <div class="pets__card">
-                                <div class="card__img">
-                                    <img src="assets/pets-jennifer.png" alt="jennifer">
-                                </div>
-                                <div class="card__text">
-                                    <p>Jennifer</p>
-                                </div>
-                                <button class="card__btn">Learn more</button>
-                            </div>
-                            <div class="pets__card">
-                                <div class="card__img">
-                                    <img src="assets/pets-woody.png" alt="woody">
-                                </div>
-                                <div class="card__text">
-                                    <p>Woody</p>
-                                </div>
-                                <button class="card__btn">Learn more</button>
-                            </div>
-                        </div>
+                        <div class="slider__row"></div>
                         <button class="arrow prev mobile">
                             <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
@@ -126,6 +116,16 @@
                         </button>
                     </div>
                     <button class="pets__btn" onclick="location.href='pets.html'">Get to know the rest</button>
+                </div>
+                <div class="pop-up hidden">
+                    <div class="pop-up__window">
+                        <button class="modal-btn">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z" fill="#292929"/>
+                            </svg>
+                        </button>
+                        <div class="pop-up__content"></div>
+                    </div>
                 </div>
             </section>
             <section class="section__help" id="help">

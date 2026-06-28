@@ -8,36 +8,54 @@
   <link rel="stylesheet" href="./css/pets.css">
   <link rel="stylesheet" href="./css/reset.css">
 </head>
-<body>
+<body class="colored-btn">
     <header class="wrapper">
         <div class="header__container">
             <div class="logo">
-            <a href="index.html">
+                <a href="index.html">
                     <h1>Cozy House</h1>
                     <p>Shelter for pets in Boston</p>
-            </a>    
-        </div>
-        <nav class="header__nav">
-            <ul class="navigation">
-                <li>
-                    <a href="index.html" class="nav__link">About the shelter</a>
-                </li>
-                <li>
-                    <a href="pets.html" class="nav__link active">Our pets</a>
-                </li>
-                <li>
-                    <a href="index.html#help" class="nav__link">Help the shelter</a>
-                </li>
-                <li>
-                    <a href="#contacts" class="nav__link">Contacts</a>
-                </li>
-            </ul>
-        </nav>
-        <button class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+                </a>  
+            </div>
+            <nav class="header__nav">
+                <ul class="navigation">
+                    <li>
+                        <a href="index.html" class="nav__link">About the shelter</a>
+                    </li>
+                    <li>
+                        <a href="pets.html" class="nav__link active">Our pets</a>
+                    </li>
+                    <li>
+                        <a href="index.html#help" class="nav__link">Help the shelter</a>
+                    </li>
+                    <li>
+                        <a href="#contacts" class="nav__link">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="burger-menu">
+                <nav class="burger-menu-nav">
+                    <ul class="burger-nav">
+                        <li>
+                            <a href="index.html" class="burger-link">About the shelter</a>
+                        </li>
+                        <li>
+                            <a href="pets.html" class="burger-link active">Our pets</a>
+                        </li>
+                        <li>
+                            <a href="index.html#help" class="burger-link">Help the shelter</a>
+                        </li>
+                        <li>
+                            <a href="#contacts" class="burger-link">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -47,102 +65,39 @@
                 <div class="pets__heading">
                     <h2>Our friends who<br> are looking for a house</h2>
                 </div>
-                <div class="pets__cards-container">
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-katrine.png" alt="katrine">
-                        </div>
-                        <div class="card__text">
-                            <p>Katrine</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                             <img src="assets/pets-jennifer.png" alt="jennifer">
-                        </div>
-                        <div class="card__text">
-                            <p>Jennifer</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-woody.png" alt="woody">
-                        </div>
-                        <div class="card__text">
-                            <p>Woody</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-sophia.png" alt="sophia">
-                        </div>
-                        <div class="card__text">
-                            <p>Sophia</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-timmy.png" alt="timmy">
-                        </div>
-                        <div class="card__text">
-                            <p>Timmy</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-charly.png" alt="charly">
-                        </div>
-                        <div class="card__text">
-                            <p>Charly</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-scarlet.png" alt="scarlett">
-                        </div>
-                        <div class="card__text">
-                            <p>Scarlett</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
-                    </div>
-                    <div class="pets__card">
-                        <div class="card__img">
-                            <img src="assets/pets-freddie.png" alt="freddie">
-                        </div>
-                        <div class="card__text">
-                            <p>Freddie</p>
-                        </div>
-                        <button class="card__btn">Learn more</button>
+                <div class="pop-up hidden">
+                    <div class="pop-up__window">
+                        <button class="modal-btn">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z" fill="#292929"/>
+                            </svg>
+                        </button>
+                        <div class="pop-up__content"></div>
                     </div>
                 </div>
+                <div class="pets__cards-container"></div>
                 <div class="pets__navigation">
-                    <div class="pets__navigation-btn inactive">
+                    <div class="pets__navigation-btn start">
                         <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.0333 10.498L9.72748e-05 5.80078V4.69727L9.0333 0V1.33789L1.52353 5.24414L9.0333 9.16016V10.498ZM23.1044 10.498L14.0712 5.80078V4.69727L23.1044 0V1.33789L15.5946 5.24414L23.1044 9.16016V10.498Z" fill="#CDCDCD"/>
+                            <path d="M9.0333 10.498L9.72748e-05 5.80078V4.69727L9.0333 0V1.33789L1.52353 5.24414L9.0333 9.16016V10.498ZM23.1044 10.498L14.0712 5.80078V4.69727L23.1044 0V1.33789L15.5946 5.24414L23.1044 9.16016V10.498Z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <div class="pets__navigation-btn inactive">
+                    <div class="pets__navigation-btn prev-page">
                         <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.0332 10.498L0 5.80078V4.69727L9.0332 0V1.33789L1.52344 5.24414L9.0332 9.16016V10.498Z" fill="#CDCDCD"/>
+                            <path d="M9.0332 10.498L0 5.80078V4.69727L9.0332 0V1.33789L1.52344 5.24414L9.0332 9.16016V10.498Z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <div class="pets__navigation-btn active__btn">
+                    <div class="pets__navigation-btn current-page active__btn">
                         <h3>1</h3>
                     </div>
-                    <div class="pets__navigation-btn">
+                    <div class="pets__navigation-btn next-page">
                         <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.0332 5.80078L0 10.498V9.16016L7.50977 5.24414L0 1.33789V0L9.0332 4.69727V5.80078Z" fill="#292929"/>
+                            <path d="M9.0332 5.80078L0 10.498V9.16016L7.50977 5.24414L0 1.33789V0L9.0332 4.69727V5.80078Z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <div class="pets__navigation-btn">
+                    <div class="pets__navigation-btn end">
                         <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.0333 5.80078L9.72748e-05 10.498V9.16016L7.50986 5.24414L9.72748e-05 1.33789V0L9.0333 4.69727V5.80078ZM23.1044 5.80078L14.0712 10.498V9.16016L21.581 5.24414L14.0712 1.33789V0L23.1044 4.69727V5.80078Z" fill="#292929"/>
+                            <path d="M9.0333 5.80078L9.72748e-05 10.498V9.16016L7.50986 5.24414L9.72748e-05 1.33789V0L9.0333 4.69727V5.80078ZM23.1044 5.80078L14.0712 10.498V9.16016L21.581 5.24414L14.0712 1.33789V0L23.1044 4.69727V5.80078Z" fill="currentColor"/>
                         </svg>
                     </div>
                 </div>
@@ -225,6 +180,6 @@
             </div>
         </div>
     </footer>
-    <script src="script/index.js"></script>
+    <script src="script/our-pets.js"></script>
 </body>
 </html>
