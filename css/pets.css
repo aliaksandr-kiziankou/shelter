@@ -20,6 +20,11 @@ html {
     margin: 0 auto;
 }
 
+header {
+    position: relative;
+    z-index: 10;
+}
+
 .header__container {
     max-width: 1200px;
     width: 100%;
@@ -139,6 +144,26 @@ header p {
     background-color: #000000;
 }
 
+.burger__wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: #29292999;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.visible {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
 .burger-menu {
     width: 320px;
     min-height: 100vh;
@@ -152,7 +177,7 @@ header p {
     background-color: #292929;
 
     transform: translateX(100%);
-    transition: all 1s ease;
+    transition: all 1s ease-in-out;
 }
 
 .burger_open {

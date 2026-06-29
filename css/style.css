@@ -179,6 +179,26 @@ header p {
     background-color: #F1CDB3;
 }
 
+.burger__wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: #29292999;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.visible {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
 .burger-menu {
     width: 320px;
     min-height: 100vh;
@@ -192,7 +212,7 @@ header p {
     background-color: #292929;
 
     transform: translateX(100%);
-    transition: all 1s ease;
+    transition: all 1s ease-in-out;
 }
 
 .burger_open {
