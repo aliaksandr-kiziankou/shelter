@@ -126,21 +126,27 @@ function updateButtonsStatus() {
 
 function changePage(newPage) {
     PETS_CARDS.classList.add('fade-out');
-    
-    const handler = (event) => {
-        if (event.propertyName !== 'opacity') return;
+
+    let handled = false;
+
+    const handler = () => {
+        if (handled) return;
+        handled = true;
 
         currentPage = newPage;
-        
         renderPage();
         pageCounter();
         updateButtonsStatus();
-
         PETS_CARDS.classList.remove('fade-out');
-    }
+    };
 
-    PETS_CARDS.addEventListener('transitionend', handler, {once: true});
-}
+    PETS_CARDS.addEventListener('transitionend', (event) => {
+        if (event.propertyName !== 'opacity') return;
+        handler();
+    }, { once: true });
+
+    setTimeout(handler, 600);
+};
 
 START_BTN.addEventListener('click', () => {
     if (currentPage === 1) return;
